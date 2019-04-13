@@ -2,10 +2,21 @@ package com.sda.java8.LinkedList;
 
 public class Node {
     private final int tip;
-    private final Node nextElement;
+    private Node nextElement;
 
-    public Node(int tip/*, Node nextElement*/){
+    public Node(int tip) {
         this.tip = tip;
-//        this.nextElement = nextElement;
+    }
+
+    public int getTip() {
+        return tip;
+    }
+
+    public Node getNextElement() {
+        return nextElement;
+    }
+
+    public void setNextElement(Node nextElement) {
+        this.nextElement = nextElement;
     }
 }
