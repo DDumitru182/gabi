@@ -26,6 +26,11 @@ public class LinkedList {
 
     //Display all elements of the list separated by space
     String print(){
-        return " ";
+        StringBuilder builder = new StringBuilder();
+        for(Node nodCurent = head; nodCurent != null; nodCurent = nodCurent.getNextElement()){
+            builder.append(nodCurent.getTip());
+            builder.append(" ");
+        }
+        return builder.toString();
     }
 }
