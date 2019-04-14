@@ -14,6 +14,8 @@ public class Application {
         myDoubleLL.add(myNode3);
         myDoubleLL.add(myNode4);
         System.out.println(myDoubleLL.print());
+        System.out.println(myDoubleLL.printReverse());
+
     }
 
     private static void simpluLL() {

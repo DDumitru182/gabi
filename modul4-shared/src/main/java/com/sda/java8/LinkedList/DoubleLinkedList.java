@@ -36,6 +36,15 @@ public class DoubleLinkedList {
         return builder.toString();
     }
 
+    String printReverse() {
+        StringBuilder builder = new StringBuilder();
+        for (DoubleLinkedNode nodCurent = tail; nodCurent != null; nodCurent = nodCurent.getPreviousElement()) {
+            builder.append(nodCurent.getValue());
+            builder.append(" ");
+        }
+        return builder.toString();
+    }
+
     void remove(int tip) {
         //Example de remove last element if list contains only 2 values
 //        Node penultimul = head;
