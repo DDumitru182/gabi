@@ -24,6 +24,7 @@ public class DoubleLinkedNode {
     public DoubleLinkedNode getPreviousElement() {
         return previousElement;
     }
+
     public void setPreviousElement(DoubleLinkedNode previousElement) {
         this.previousElement = previousElement;
     }

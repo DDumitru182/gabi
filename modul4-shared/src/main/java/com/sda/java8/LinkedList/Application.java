@@ -15,6 +15,12 @@ public class Application {
         myDoubleLL.add(myNode4);
         System.out.println(myDoubleLL.print());
         System.out.println(myDoubleLL.printReverse());
+        myDoubleLL.remove(500);
+        myDoubleLL.remove(900);
+        myDoubleLL.remove(200);
+        myDoubleLL.remove(700);
+        System.out.println(myDoubleLL.print());
+        System.out.println(myDoubleLL.printReverse());
 
     }
 

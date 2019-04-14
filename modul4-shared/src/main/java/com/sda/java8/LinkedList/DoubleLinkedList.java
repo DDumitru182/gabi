@@ -45,7 +45,7 @@ public class DoubleLinkedList {
         return builder.toString();
     }
 
-    void remove(int tip) {
+    void remove(int value) {
         //Example de remove last element if list contains only 2 values
 //        Node penultimul = head;
 //        if (penultimul.getNextElement().getNextElement() == null){
@@ -60,27 +60,44 @@ public class DoubleLinkedList {
             return;
         }
 
+        if(head.getValue() == value && head.getNextElement() == null){
+            head = null;
+            tail = null;
+            return;
+        }
+
         //IF the first element is the value to remove, move the head to the next element
-        if (head.getValue() == tip) {
+        if (head.getValue() == value) {
             head = head.getNextElement();
+            if (head != null) {
+                head.setPreviousElement(null);
+            }
+            return;
+        }
+
+        //If the last elemeent is the value to remove, move the tail to the previous element
+        if (tail.getValue() == value) {
+            tail = tail.getPreviousElement();
+            tail.setNextElement(null);
             return;
         }
 
         //Parcurgerea LL-ului pana cand trecem prin toate elemenetele sau pana gasim valuarea.
         DoubleLinkedNode nodCurent = head;
-        while ((nodCurent.getNextElement().getValue() != tip)
+        while ((nodCurent.getNextElement().getValue() != value)
                 &&
                 (nodCurent.getNextElement() != null)) {
             nodCurent = nodCurent.getNextElement();
         }
 
+
         //If we didn't find the element, end.
         if (nodCurent.getNextElement() == null) {
             return;
-        } else {
-            //Remove the element
-            nodCurent.setNextElement(nodCurent.getNextElement().getNextElement());
         }
+        //Remove the element
+        nodCurent.setNextElement(nodCurent.getNextElement().getNextElement());
+        nodCurent.getNextElement().setPreviousElement(nodCurent);
     }
 }
 
