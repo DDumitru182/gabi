@@ -24,23 +24,6 @@ public class LinkedList {
         parcurge.setNextElement(node); /*LEGATURA: cea mai importanta chestie din LL*/
     }
 
-    void remove(int value) {
-
-        //exemplu remove last element if lost has 2 elements
-//        if (head.getNextElement().getNextElement() == null) {
-//            head.setNextElement(null);
-//        }
-
-//        for (Node nodCurent = head; nodCurent.getNextElement().getValue() == value; nodCurent = nodCurent.getNextElement()) {
-//can t use for bc it is not explicitludoing anythingbesides walking the list
-
-        }
-        Node nodCurent = head;
-        while (nodCurent.getNextElement() != null && (nodCurent.getNextElement().getValue() == value)) {
-            nodCurent = nodCurent.getNextElement();
-    }
-nodCurent.setNextElement(nodCurent.getNextElement().getNextElement());
-
     //Display all elements of the list separated by space
     String print() {
         StringBuilder builder = new StringBuilder();
