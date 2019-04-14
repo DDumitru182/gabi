@@ -14,5 +14,7 @@ public class Application {
         myLL.add(myNode4);
 
         System.out.println(myLL.print());
+        myLL.remove(40);
+        System.out.println(myLL.print());
     }
 }

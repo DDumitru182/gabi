@@ -50,4 +50,42 @@ nodCurent.setNextElement(nodCurent.getNextElement().getNextElement());
         }
         return builder.toString();
     }
+
+    void remove(int tip) {
+        //Example de remove last element if list contains only 2 values
+//        Node penultimul = head;
+//        if (penultimul.getNextElement().getNextElement() == null){
+//            penultimul.setNextElement(null);
+//        }
+        //WE can't use the for because it's not explicitly doing anything besides walking the list
+//        for(Node nodCurent = head; nodCurent.getNextElement().getTip() == tip; nodCurent = nodCurent.getNextElement()){
+//        }
+
+        //If the list is empty, STOP.
+        if (head == null ){
+            return;
+        }
+
+        //IF the first element is the value to remove, move the head to the next element
+        if(head.getTip() == tip){
+            head = head.getNextElement();
+            return;
+        }
+
+        //Parcurgerea LL-ului pana cand trecem prin toate elemenetele sau pana gasim valuarea.
+        Node nodCurent = head;
+        while ((nodCurent.getNextElement().getTip() != tip)
+                &&
+                (nodCurent.getNextElement() != null)) {
+            nodCurent = nodCurent.getNextElement();
+        }
+
+        //If we didn't find the element, end.
+        if(nodCurent.getNextElement() == null){
+            return;
+        } else {
+            //Remove the element
+            nodCurent.setNextElement(nodCurent.getNextElement().getNextElement());
+        }
+    }
 }
