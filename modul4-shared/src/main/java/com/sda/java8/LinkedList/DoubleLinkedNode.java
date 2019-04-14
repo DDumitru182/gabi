@@ -1,8 +1,9 @@
 package com.sda.java8.LinkedList;
 
-public class DoubleLinkedNode{
+public class DoubleLinkedNode {
     private final int value;
     private DoubleLinkedNode nextElement;
+    private DoubleLinkedNode previousElement;
 
     public DoubleLinkedNode(int value) {
         this.value = value;
@@ -18,5 +19,12 @@ public class DoubleLinkedNode{
 
     public void setNextElement(DoubleLinkedNode nextElement) {
         this.nextElement = nextElement;
+    }
+
+    public DoubleLinkedNode getPreviousElement() {
+        return previousElement;
+    }
+    public void setPreviousElement(DoubleLinkedNode previousElement) {
+        this.previousElement = previousElement;
     }
 }

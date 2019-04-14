@@ -13,6 +13,7 @@ public class Application {
         myDoubleLL.add(myNode2);
         myDoubleLL.add(myNode3);
         myDoubleLL.add(myNode4);
+        System.out.println(myDoubleLL.print());
     }
 
     private static void simpluLL() {

@@ -14,20 +14,17 @@ public class DoubleLinkedList {
 
         if (head == null) {
             head = node;
+            tail = node;
             return;
         }
-
-        //Inainte
-        DoubleLinkedNode parcurge = head;
-        while (parcurge.getNextElement() != null) {
-            parcurge = parcurge.getNextElement();
-        }
-
-        DoubleLinkedNode inapoi = tail;
-        while ()
-
-        parcurge.setNextElement(node); /*LEGATURA: cea mai importanta chestie din LL*/
+        tail.setNextElement(node);
+        node.setPreviousElement(tail);
+        tail = node;
     }
+
+
+//        parcurge.setNextElement(node); /*LEGATURA: cea mai importanta chestie din LL*/
+
 
     //Display all elements of the list separated by space
     String print() {
@@ -50,12 +47,12 @@ public class DoubleLinkedList {
 //        }
 
         //If the list is empty, STOP.
-        if (head == null ){
+        if (head == null) {
             return;
         }
 
         //IF the first element is the value to remove, move the head to the next element
-        if(head.getValue() == tip){
+        if (head.getValue() == tip) {
             head = head.getNextElement();
             return;
         }
@@ -69,7 +66,7 @@ public class DoubleLinkedList {
         }
 
         //If we didn't find the element, end.
-        if(nodCurent.getNextElement() == null){
+        if (nodCurent.getNextElement() == null) {
             return;
         } else {
             //Remove the element
@@ -77,3 +74,4 @@ public class DoubleLinkedList {
         }
     }
 }
+
